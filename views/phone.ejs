@@ -1,0 +1,92 @@
+
+<%- include('./templates/header') %>
+<div class="text-center">
+    <% if(msg){ %>
+
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <%- msg %>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+    <% } %>
+</div>
+
+<div class="container my-3">
+
+        <div class="row">
+            <div class="col-md-8 offset-md-2 bg-info rounded text-light p-3">
+                
+                <form action="/phone" method="POST">
+                    <a class="btn btn-outline-light" href="/devices">Goto Devices page</a>
+
+                    <h4 class="text-center py-2 mb-4 text-uppercase ">Add A New Device</h4>
+
+                    <h4>Device Information</h4>
+
+                    <div class="form-group">
+                    <label for="device">select Device</label>
+                        <select class="form-control" id="device" name="device" required>
+                            <option value="iphone">Please Select a Device</option>
+                            <option value="iphone">iphone</option>
+                            <option value="ipad">ipad</option>
+                            <option value="ipod">ipod</option>
+                            <option value="other">other</option>
+                            <option value="laptop">laptop</option> 
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="model">Model</label>
+                        <input type="text" class="form-control" id="model" aria-describedby="modelHelp" name="model" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="color">Color</label>
+                        <input type="text" class="form-control" id="color" aria-describedby="colorHelp" name="color" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="network">Network</label>
+                        <input type="text" class="form-control" id="network" aria-describedby="networkHelp" name="network">
+                    </div>
+                    <div class="form-group">
+                        <label for="problem">Problem</label>
+                        <textarea class="form-control" id="problem" rows="3" name="problem" required></textarea>
+                    </div>
+                    <h4 class="mt-5">Customer contact information</h4>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" id="name" aria-describedby="nameHelp" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" aria-describedby="emailHelp" name="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="tel" class="form-control" id="phone" aria-describedby="phoneHelp" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Address</label>
+                        <textarea class="form-control" id="address" rows="3" name="address"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="city">City</label>
+                        <input type="text" class="form-control" id="city" aria-describedby="cityHelp" name="city">
+                    </div>
+                    <div class="form-group">
+                        <label for="state">State</label>
+                        <input type="text" class="form-control" id="state" aria-describedby="stateHelp" name="state">
+                    </div>
+                    <div class="form-group">
+                        <label for="postal">Postal Code</label>
+                        <input type="number" class="form-control" id="postal" aria-describedby="postalHelp" name="postal">
+                    </div>
+
+                    <button type="submit" class="btn btn-light">Submit</button>
+                </form>
+            </div>
+        </div>
+</div>
+
+
+
+  <%- include('./templates/footer') %>

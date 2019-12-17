@@ -1,0 +1,110 @@
+
+<%- include('./templates/header') %>
+<button class="btn btn-outline-dark" onclick="window.history.back()">Goto Back</button>
+<button class="btn" style="border: 1px solid #777" onclick="window.print()">Print This Page</button>
+
+    <div class="container mt-2">
+        <div class="row">
+            <div class="col-12 p-2" style="text-align: right;">
+                <span class="pr-3"><%- device._id %></span>
+                <span><%- device.date.toDateString()%></span>
+            </div>
+            
+            <div class="col-md-6">
+                <table class="table table-striped">
+                    <h4>User Information</h4>
+                    <thead class="thead-dark">
+                      <tr>
+                        <th scope="col">Serial</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Value</th>
+                        
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>Name</td>
+                        <td><%- device.name %></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>Email</td>
+                        <td><%- device.email %></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td>Phone</td>
+                        <td><%- device.phone %></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">4</th>
+                        <td>Address</td>
+                        <td><%- device.address %></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">5</th>
+                        <td>City</td>
+                        <td><%- device.city %></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">6</th>
+                        <td>State</td>
+                        <td><%- device.state %></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">7</th>
+                        <td>Postal</td>
+                        <td><%- device.postal %></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <div class="col-md-6">
+                    
+                    <table class="table table-striped">
+                        <h4>Device Information</h4>
+                        <thead class="thead-dark">
+                          <tr>
+                            <th scope="col">Serial</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Value</th> 
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">1</th>
+                            <td>Device Name</td>
+                            <td><%- device.device %></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">2</th>
+                            <td>Model</td>
+                            <td><%- device.model %></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">3</th>
+                            <td>Color</td>
+                            <td><%- device.color %></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">4</th>
+                            <td>Network</td>
+                            <td><%- device.network %></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">5</th>
+                            <td>Problem</td>
+                            <td><%- device.problem %></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+            </div>
+        </div>
+  
+
+
+
+  <%- include('./templates/footer') %>
