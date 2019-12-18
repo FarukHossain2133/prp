@@ -1,10 +1,13 @@
 
 <%- include('./templates/header') %>
 
-<div class="container mt-2">
+<div class="container-fluid mt-2" id="homePage" >
     <div class="row">
-            <div class="col-md-6 offset-md-3">
-            <h1 class="text-center">Welcome to my app</h1>    
+          <div class="col-md-6 text-uppercase text-center" id="homeContainer" >
+            <h1 class="text-center display-5 text-light">Welcome to my app</h1>
+            <p class="lead text-light mb-4" style="font-size: 13px !important">This app was developed for maintain devices repair shop</p>
+            <a href="/phone" class="btn btn-outline-light">Add A New Device</a>   
+            <a href="/devices"  class="btn btn-outline-light">See All Devices</a>   
         </div>
      </div>
 </div>
