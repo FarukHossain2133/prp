@@ -1,5 +1,4 @@
 body {
-  /* padding: 50px; */
   font: 16px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
@@ -26,5 +25,17 @@ a {
   padding: 40px 20px;
   border-radius: 10px;
   box-shadow: 15px 15px 20px  rgba(0, 0, 0, .5);
+}
 
+.BUTTON {
+  color: white;
+}
+
+.BUTTON:hover {
+  color: black !important;
+}
+@media print {
+  .print {
+   display: none;
+  }
 }

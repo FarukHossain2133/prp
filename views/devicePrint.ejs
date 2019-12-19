@@ -1,10 +1,13 @@
 
 <%- include('./templates/header') %>
-<button class="btn btn-outline-dark" onclick="window.history.back()">Goto Back</button>
-<button class="btn" style="border: 1px solid #777" onclick="window.print()">Print This Page</button>
+<button  class="btn btn-info print" onclick="window.history.back()">Goto Back</button>
+<button  class="btn btn-info print" style="border: 1px solid #777" onclick="window.print()">Print This Page</button>
 
     <div class="container mt-2">
         <div class="row">
+            <div class="col-md-8 offset-md-2">
+              <h5 class="text-center">Customer Token Form</h5>
+            </div>
             <div class="col-12 p-2" style="text-align: right;">
                 <span class="pr-3"><%- device._id %></span>
                 <span><%- device.date.toDateString()%></span>
@@ -95,11 +98,45 @@
                           </tr>
                           <tr>
                             <th scope="row">5</th>
+                            <td>IMEI</td>
+                            <td><%- device.imei %></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">6</th>
+                            <td>S/N</td>
+                            <td><%- device.serial %></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">7</th>
+                            <td>Weight</td>
+                            <td><%- device.weight %></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">8</th>
+                            <td>Voltage</td>
+                            <td><%- device.voltage %></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">9</th>
+                            <td>Status</td>
+                            <td><%- device.status %></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">10</th>
+                            <td>Fault</td>
+                            <td><%- device.fault %></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">11</th>
                             <td>Problem</td>
                             <td><%- device.problem %></td>
                           </tr>
                         </tbody>
                       </table>
+                    </div>
+                    <div class="col-md-8 offset-md-2">
+                      <h5 class="text-center">We Provide you best service</h5>
+                      <p class="text-center">Please show the token when you collect the device from us</p>
                     </div>
             </div>
         </div>

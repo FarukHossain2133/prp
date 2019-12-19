@@ -5,7 +5,6 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
-var phoneRouter = require('./routes/phone');
 var devicesRouter = require('./routes/devices');
 var deviceRouter = require('./routes/device');
 var usersRouter = require('./routes/users');
@@ -23,7 +22,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/phone', phoneRouter);
 app.use('/devices', devicesRouter);
 app.use('/device', deviceRouter);
 app.use('/users', usersRouter);
@@ -43,7 +41,5 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-
-
 
 module.exports = app;

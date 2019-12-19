@@ -19,6 +19,26 @@ const phoneSchema = new mongoose.Schema({
     network: {
         type: String,
     },
+    imei: {
+        type: Number,
+    },
+    serial: {
+        type: Number,
+    },
+    weight: {
+        type: String,
+    },
+    voltage: {
+        type: String,
+    },
+    status: {
+        type: String,
+        required: true
+    },
+    fault: {
+        type: String,
+        required: true
+    },
     problem: {
         type: String,
         required: true

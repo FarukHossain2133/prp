@@ -3,12 +3,15 @@ var router = express.Router();
 const Phone = require('../models/Phone');
 
 
-/* GET All Device. */
+// @route   GET devices
+// @desc    Get All Devices
+// @access  public
 router.get('/', async function(req, res, next) {
         var perPage = 10;
         var page = req.params.page || 1;
         try {
            const data = await Phone.find({})
+                .sort({date: -1})
                 .skip((perPage * page) - perPage)
                 .limit(perPage).exec();
 
@@ -29,13 +32,16 @@ router.get('/', async function(req, res, next) {
 
 
 
-/* GET All Device. */
+// @route   GET devices/:page
+// @desc    Get All Devices page view
+// @access  public
 router.get('/:page', async function(req, res, next) {
       var perPage = 10;
       var page = req.params.page || 1;
 
     try{
         const data = await Phone.find({})
+                  .sort({date: -1})
                   .skip((perPage * page) - perPage)
                   .limit(perPage).exec();
 
@@ -55,8 +61,9 @@ router.get('/:page', async function(req, res, next) {
   });
 
 
-
-/* Delete a Device. */
+// @route   GET devices/delete/:id
+// @desc    Get A Device And Delete
+// @access  public
 router.get('/delete/:id', async function(req, res, next) {
     var perPage = 10;
     var page = req.params.page || 1;
@@ -64,6 +71,7 @@ router.get('/delete/:id', async function(req, res, next) {
     try{
       await Phone.findByIdAndDelete(req.params.id);
       const data = await Phone.find({})
+              .sort({date: -1})
               .skip((perPage * page) - perPage)
               .limit(perPage).exec();
 
@@ -81,7 +89,9 @@ router.get('/delete/:id', async function(req, res, next) {
   }  
 });
 
-/* Edit get method a Device. */
+// @route   GET devices/update/:id
+// @desc    Get A Device And Update
+// @access  public
 router.get('/update/:id', async function(req, res, next) {
     const device = await Phone.findById(req.params.id);
 res.render('device', { title: 'Get a Device', msg: '', device: device });
@@ -95,6 +105,7 @@ router.post('/update/:id', async function(req, res, next) {
         try{
           await Phone.findByIdAndUpdate(req.params.id, {...req.body});
           const data = await Phone.find({})
+                  .sort({date: -1})
                   .skip((perPage * page) - perPage)
                   .limit(perPage).exec();
 
@@ -112,8 +123,9 @@ router.post('/update/:id', async function(req, res, next) {
     }  
 });
 
-// Filtering the serced result
-/* GET All Device. */
+// @route   GET devices/filter
+// @desc    Filtering Devices
+// @access  public
 router.post('/filter', async function(req, res, next){
     const key = req.body.key;
     const value = req.body.value;
@@ -122,6 +134,7 @@ router.post('/filter', async function(req, res, next){
 
   try{
     const data = await Phone.find({[key]: value})
+            .sort({date: -1})
             .skip((perPage * page) - perPage)
             .limit(perPage).exec();
 

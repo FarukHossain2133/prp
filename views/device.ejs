@@ -18,7 +18,7 @@
             <div class="col-md-8 offset-md-2 bg-info rounded text-light p-3">
                 
                 <form action="/devices/update/<%- device._id %>" method="POST" >
-                    <a class="btn btn-outline-light" onclick="window.history.back()">Goto Back</a>
+                    <a class="btn btn-outline-light BUTTON" onclick="window.history.back()">Goto Back</a>
                     <h4 class="text-center py-2 mb-4 text-uppercase ">Update Device information</h4>
 
                     <h4>Device Information</h4>
@@ -26,11 +26,13 @@
                     <label for="device">Select Device</label>
                         <select class="form-control" id="device" name="device" required>
                             <option value="iphone">Please Select a Device</option>
-                            <option value="iphone" <% if(device.device==="iphone"){ %> selected <% } %>>iphone</option>
-                            <option value="ipad" <% if(device.device==="ipad"){ %> selected <% } %>>ipad</option>
-                            <option value="ipod" <% if(device.device==="ipod"){ %> selected <% } %>>ipod</option>
-                            <option value="laptop" <% if(device.device==="laptop"){ %> selected <% } %>>laptop</option> 
-                            <option value="other" <% if(device.device==="other"){ %> selected <% } %>>other</option>
+                            <option value="iphone" <% if(device.device==="iphone"){ %> selected <% } %>>Iphone</option>
+                            <option value="ipad" <% if(device.device==="ipad"){ %> selected <% } %>>Ipad</option>
+                            <option value="ipod" <% if(device.device==="ipod"){ %> selected <% } %>>Ipod</option>
+                            <option value="apple" <% if(device.device==="apple"){ %> selected <% } %>>Apple</option>
+                            <option value="samsung" <% if(device.device==="samsung"){ %> selected <% } %>>Samsung</option>
+                            <option value="laptop" <% if(device.device==="laptop"){ %> selected <% } %>>Laptop</option> 
+                            <option value="other" <% if(device.device==="other"){ %> selected <% } %>>Other</option>
                         </select>
                     </div>
                     <div class="form-group">
@@ -44,6 +46,76 @@
                     <div class="form-group">
                         <label for="network">Network</label>
                         <input type="text" class="form-control" id="network" aria-describedby="networkHelp" name="network" value="<%- device.network %>">
+                    </div>
+                    <div class="form-group">
+                        <label for="imei">IMEI Number</label>
+                        <input
+                          type="number"
+                          class="form-control"
+                          id="imei"
+                          aria-describedby="imeikHelp"
+                          name="imei"
+                          value="<%- device.imei %>"
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label for="serial">S/N Number</label>
+                        <input
+                          type="number"
+                          class="form-control"
+                          id="serial"
+                          aria-describedby="serialkHelp"
+                          name="serial"
+                          value="<%- device.serial %>"
+
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label for="weight">Weight</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="weight"
+                          aria-describedby="weightHelp"
+                          name="weight"
+                          value="<%- device.weight %>"
+
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label for="voltage">Voltage</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="voltage"
+                          aria-describedby="voltageHelp"
+                          name="voltage"
+                          value="<%- device.voltage %>"
+
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label for="status">Device Status</label>
+                        <select class="form-control" id="status" name="status" required>
+                        <option>Please Select Device Status</option>
+                        <option value="used" <% if(device.status==="used"){ %> selected <% } %> >Used</option>
+                        <option value="scratch" <% if(device.status==="scratch"){ %> selected <% } %> >Scratch</option>
+                        <option value="broken" <% if(device.status==="broken"){ %> selected <% } %> >Broken</option>
+                      </select>
+                      </div>
+                    <div class="form-group">
+                      <label for="fault">Fault</label>
+                      <select class="form-control" id="fault" name="fault" required>
+                        <option>Please Select The Fault</option>
+                        <option value="broken" <% if(device.fault==="broken"){ %> selected <% } %> >Broken</option>
+                        <option value="water" <% if(device.fault==="water"){ %> selected <% } %> >Water</option>
+                        <option value="display" <% if(device.fault==="display"){ %> selected <% } %> >Display</option>
+                        <option value="battery" <% if(device.fault==="battery"){ %> selected <% } %> >Battery</option>
+                        <option value="Network" <% if(device.fault==="network"){ %> selected <% } %> >Network</option>
+                        <option value="keyboard" <% if(device.fault==="keyboard"){ %> selected <% } %> >Keyboard</option>
+                        <option value="speaker" <% if(device.fault==="speaker"){ %> selected <% } %> >Speaker</option>
+                        <option value="other" <% if(device.fault==="other"){ %> selected <% } %> >Other</option>
+                      </select>
                     </div>
                     <div class="form-group">
                         <label for="problem">Problem</label>
