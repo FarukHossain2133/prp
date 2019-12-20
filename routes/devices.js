@@ -152,6 +152,13 @@ router.post('/filter', async function(req, res, next){
   }  
 });
 
+// ejs description field
+{/* <td><% if(device.problem.length > 20) { %>
+  <%- device.problem.slice(0, 20) + "..." %>
+<% }else{ %>
+  <%- device.problem %>
+<% } %></td> */}
+
 
 
 module.exports = router;

@@ -118,7 +118,7 @@
                       </select>
                     </div>
                     <div class="form-group">
-                        <label for="problem">Problem</label>
+                        <label for="problem">Repair Description</label>
                         <textarea class="form-control" id="problem" rows="3" name="problem"  required><%- device.problem %></textarea>
                     </div>
                     <h4>Customer contact information</h4>
@@ -126,6 +126,55 @@
                         <label for="name">Name</label>
                         <input type="text" class="form-control" id="name" aria-describedby="nameHelp" name="name"  value="<%- device.name %>"  required>
                     </div>
+
+                    <div class="form-group">
+                      <label for="surname">Surname</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="surname"
+                        aria-describedby="surnameHelp"
+                        name="surname"
+                        placeholder="Optional"
+                        value="<%- device.surname %>"
+                      />
+                    </div>
+                    <div class="form-group">
+                      <p>Select Gender</p>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="gender" id="exampleRadios1" value="male" <% if(device.gender==="male"){ %> checked <% } %>>
+                      <label class="form-check-label" for="exampleRadios1">
+                       Male
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="gender" id="exampleRadios2" value="female" <% if(device.gender==="female"){ %> checked <% } %>>
+                      <label class="form-check-label" for="exampleRadios2">
+                        Female
+                      </label>
+                    </div>
+                    <div class="form-check disabled">
+                      <input class="form-check-input" type="radio" name="gender" id="exampleRadios3" value="others" <% if(device.gender==="other"){ %> checked <% } %> >
+                      <label class="form-check-label" for="exampleRadios3">
+                       Others
+                      </label>
+                    </div>
+                  </div>
+            
+                    
+                      <div class="form-group">
+                        <label for="company">Company</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="company"
+                          aria-describedby="companyHelp"
+                          name="company"
+                          placeholder="Optional"
+                          value="<%- device.company %>"
+                        />
+                    </div>
+
                     <div class="form-group">
                         <label for="email">Email</label>
                         <input type="email" class="form-control" id="email" aria-describedby="emailHelp" name="email"  value="<%- device.email %>">
@@ -135,8 +184,32 @@
                         <input type="tel" class="form-control" id="phone" aria-describedby="phoneHelp" name="phone"  value="<%- device.phone %>">
                     </div>
                     <div class="form-group">
+                      <label for="altphone">Alter Phone Number</label>
+                      <input
+                        type="tel"
+                        class="form-control"
+                        id="altphone"
+                        aria-describedby="altphoneHelp"
+                        placeholder="Optional"
+                        name="altphone"
+                        value="<%- device.altphone %>"
+                      />
+                    </div>
+                    <div class="form-group">
                         <label for="address">Address</label>
                         <textarea class="form-control" id="address" rows="3" name="address"><%- device.address %></textarea>
+                    </div>
+                    <div class="form-group">
+                      <label for="fax">Fax</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="fax"
+                        aria-describedby="faxHelp"
+                        name="fax"
+                        placeholder="Optional"
+                        value="<%- device.fax %>"
+                      />
                     </div>
                     <div class="form-group">
                         <label for="city">City</label>

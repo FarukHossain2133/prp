@@ -48,13 +48,28 @@ const phoneSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    gender: {
+        type: String
+    },
+    surname: {
+        type: String
+    },
+    company: {
+        type: String
+    },
     email: {
         type: String,
     },
     phone: {
         type: String,
     },
+    altphone: {
+        type: String,
+    },
     address: {
+        type: String,
+    },
+    fax: {
         type: String,
     },
     city: {

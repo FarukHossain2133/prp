@@ -23,6 +23,7 @@
                                 <option value="name">Name</option>
                                 <option value="phone">Phone</option>
                                 <option value="email">Email</option>
+                                <option value="fault">Fault</option>
                             </select>
                         </div>
                         <div class="form-group mx-sm-3 mb-2">
@@ -43,7 +44,7 @@
                             <th scope="col">Name</th>
                             <th scope="col">Phone</th>
                             <th scope="col">Email</th>
-                            <th scope="col">Problem</th>
+                            <th scope="col">Fault</th>
                             <th scope="col">Action</th>
                         </tr>
                     </thead>
@@ -55,11 +56,8 @@
                                 <td><%- device.name %></td>
                                 <td><%- device.phone %></td>
                                 <td><%- device.email %></td>
-                                <td><% if(device.problem.length > 20) { %>
-                                    <%- device.problem.slice(0, 20) + "..." %>
-                                <% }else{ %>
-                                    <%- device.problem %>
-                                <% } %></td>
+                                <td><%- device.fault %></td>
+                              
                                 <td>
                                     <a href="/devices/update/<%- device._id%>" class="btn btn-success">Edit</a></>
                                     <a href="/devices/delete/<%- device._id%>"  onclick="return confirm('Are you sure you want to delete this item?')" class="btn btn-danger" href="#">Delete</a>
